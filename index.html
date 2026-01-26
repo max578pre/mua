@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>de max</title>
+
+<style>
+    .contenedor-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .imagenes {
+        display: inline-block;
+        width: 200px;
+        height: auto;
+        vertical-align: top;
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+        background-color: rgb(113, 183, 204);
+    }
+
+    .propuesta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    button {
+        padding: 15px;
+        margin-right: 40px;
+        background-color: rgb(39, 55, 199);
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        border: 5px rgb(204, 17, 211) dashed;
+        border-color: violet;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        white-space: nowrap;
+    }
+
+    h2 {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="contenedor-img">
+    <img src="1.jpg" class="imagenes">
+    <img src="2.jpg" class="imagenes">
+
+</div>
+
+<h2>me ama?</h2>
+
+<div class="propuesta">
+    <button id="si">si</button>
+    <button id="no">no</button>
+</div>
+
+<script>
+    const botonSi = document.getElementById("si");
+    const botonNo = document.getElementById("no");
+
+    let tamano = 20; 
+    let contadorClics = 0;
+
+    botonNo.addEventListener("click", () => {
+        tamano += 15;
+        botonSi.style.fontSize = tamano + "px";
+        
+        
+        botonSi.style.minWidth = (tamano * 3) + "px"; 
+        botonSi.style.minHeight = (tamano * 1.5) + "px";
+    });
+
+    botonSi.addEventListener("click", () => {
+        contadorClics++;
+
+        if (contadorClics === 1) {
+            botonSi.innerText = "de verdad?";
+        }
+        else if (contadorClics === 2) {
+            botonSi.innerText = "de verdad verdad???????????";
+            botonSi.style.backgroundColor = "rgb(255, 105, 180)";
+        }
+        else {
+            alert("mua, te amo");
+        }
+    });
+</script>
+</body>
+</html>
