@@ -1,105 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>de max</title>
+    <meta charset="UTF-8">
+    <title>de max</title>
 
-<style>
-    .contenedor-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
+    <style>
+        .contenedor-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    .imagenes {
-        display: inline-block;
-        width: 200px;
-        height: auto;
-        vertical-align: top;
-    }
+        .imagenes {
+            display: inline-block;
+            width: 200px;
+            height: auto;
+            vertical-align: top;
+          
 
-    body {
-        padding: 0px;
-        margin: 0px;
-        background-color: rgb(113, 183, 204);
-    }
+        }
 
-    .propuesta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-    }
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(0, 0, 0);
+            transition: background 1s ease;
+            
+        }
 
-    button {
-        padding: 15px;
-        margin-right: 40px;
-        background-color: rgb(39, 55, 199);
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        cursor: pointer;
-        border: 5px rgb(204, 17, 211) dashed;
-        border-color: violet;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s ease;
-        white-space: nowrap;
-    }
+        body.musica-activa {
+            background-color: rgb(242, 159, 242);
+            filter: blur(0);
+            
+        }
 
-    h2 {
-        text-align: center;
-    }
-</style>
+        .propuesta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+         
+        }
+
+        button {
+            padding: 15px;
+            margin-right: 40px;
+            background-color: rgb(219, 51, 234);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: 5px rgb(204, 17, 211);
+            border-color: violet;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            white-space: nowrap;
+         
+        }
+
+        button2 {
+            padding: 15px;
+            margin-right: 40px;
+            background-color: rgb(152, 149, 237);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+      
+        }
+
+
+        .fotito {
+            width: 90px;
+            height: 90px;
+            vertical-align: left;
+            margin: 10px;
+         
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="contenedor-img">
-    <img src="1.jpg" class="imagenes">
-    <img src="2.jpg" class="imagenes">
+    <div">
+        <img src="img/3.jpg" class="fotito">
 
-</div>
+        </div>
 
-<h2>me ama?</h2>
+        <div class="contenedor-img">
+            <img src="img/1.jpg" class="imagenes">
+            <img src="img/2.jpg" class="imagenes">
+        </div>
 
-<div class="propuesta">
-    <button id="si">si</button>
-    <button id="no">no</button>
-</div>
+        <h2>quieres ser mi san valentin?</h2>
 
-<script>
-    const botonSi = document.getElementById("si");
-    const botonNo = document.getElementById("no");
+        <div class="propuesta">
+            <button id="si">si</button>
+            <button id="no">no</button>
+        </div>
 
-    let tamano = 20; 
-    let contadorClics = 0;
+        <script>
+            const botonSi = document.getElementById("si");
+            const botonNo = document.getElementById("no");
 
-    botonNo.addEventListener("click", () => {
-        tamano += 15;
-        botonSi.style.fontSize = tamano + "px";
-        
-        
-        botonSi.style.minWidth = (tamano * 3) + "px"; 
-        botonSi.style.minHeight = (tamano * 1.5) + "px";
-    });
+            let tamano = 20;
+            let contadorClics = 0;
 
-    botonSi.addEventListener("click", () => {
-        contadorClics++;
+            botonNo.addEventListener("click", () => {
+                tamano += 15;
+                botonSi.style.fontSize = tamano + "px";
 
-        if (contadorClics === 1) {
-            botonSi.innerText = "de verdad?";
-        }
-        else if (contadorClics === 2) {
-            botonSi.innerText = "de verdad verdad???????????";
-            botonSi.style.backgroundColor = "rgb(255, 105, 180)";
-        }
-        else {
-            alert("mua, te amo");
-        }
-    });
-</script>
+
+                botonSi.style.minWidth = (tamano * 3) + "px";
+                botonSi.style.minHeight = (tamano * 1.5) + "px";
+            });
+
+            botonSi.addEventListener("click", () => {
+                contadorClics++;
+
+                if (contadorClics === 1) {
+                    botonSi.innerText = "de verdad?";
+                }
+                else if (contadorClics === 2) {
+                    botonSi.innerText = "de verdad verdad??";
+                    botonSi.style.backgroundColor = "rgb(255, 105, 180)";
+                }
+                else {
+                    alert("mua, te amo");
+                }
+            });
+        </script>
+
+        <button2 id="btnMusica" class="boton2">▶️ Música</button>
+
+        <audio id="musica" loop>
+            <source src="music/Still With You.mp3" type="audio/mpeg">
+        </audio>
+
+
+        <script src="musica.js"></script>
+
 </body>
+
 </html>
